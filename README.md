@@ -23,6 +23,8 @@ python boot_strap.py --config exp_test/configs/example_test.py --gpu 6,7
 1. Visdom tool
 
 ```python
+from framework.vis.visualizer import Visualizer
+
 vis = Visualizer(env=config.visdom_env)
 ...
 vis.plot('loss', loss.item())
@@ -36,7 +38,7 @@ log = framework.logger.getLogger(__name__)
 log.info(f'train image num: {len(data_loader.dataset)}')
 ```
 
-3. Auto create path with a path register in
+3. Auto create path with a path register in the config file.
 
 ```python
 from framework.config.basic import BasicConfig
