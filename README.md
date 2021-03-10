@@ -76,4 +76,5 @@ Notification example:
 
 ## FAQ
 Q: Why use python file to config instead of popular `json/yaml` configurations?
+
 A: Python provides more powerful processing fuction and provide some default settings via object oriented programing. IDE like PyCharm provides perfect code completion when use python to config the tasks.
