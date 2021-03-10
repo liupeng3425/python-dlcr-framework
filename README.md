@@ -1,6 +1,6 @@
 # python-dlcr-framework
 
-A python deep learning configuration and run framework.
+A python deep learning configuration and run framework. A base code templete for deep learning coding, solved the confusing from `working directory`, `sys.path` setting in PyCharm and run on a Linux server.
 
 ## Basic usage
 
@@ -10,7 +10,7 @@ Run example:
 python boot_strap.py --config exp_test/configs/example_test.py
 ```
 
-add `--gpu ID` to override you gpu setting in the config file, in some case gpu used by others.
+add `--gpu ID` to conviniently override gpu setting in the config file, in some case gpu may used when run your experiments.
 
 e.g. you set `gpu='4,3'` in config file but want to use gpu 6 and 7 to train:
 
@@ -57,7 +57,7 @@ class Config(BasicConfig):
 
 When your experiment run into a crash, push a message to your Wechat or other app, e.g. feishu, dingtalk... with third
 party push service.
-> Now only support push service of (https://sct.ftqq.com/sendkey)
+> Now only support push service from (https://sct.ftqq.com)
 
 1. setup your push service in (https://sct.ftqq.com) and copy token to `boot_strap.py, line 11`, e.g.
 
@@ -73,3 +73,7 @@ python boot_strap.py --config exp_test/configs/example_push_service.py --gpu 7 -
 
 Notification example:
 ![](img/331615367782.jpg)
+
+## FAQ
+Q: Why use python file to config instead of popular `json/yaml` configurations?
+A: Python provides more powerful processing fuction and provide some default settings via object oriented programing. IDE like PyCharm provides perfect code completion when use python to config the tasks.
