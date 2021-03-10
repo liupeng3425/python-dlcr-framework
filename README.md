@@ -72,4 +72,4 @@ python boot_strap.py --config exp_test/configs/example_push_service.py --gpu 7 -
 ```
 
 Notification example:
-![](img/102831615363760.jpg)
+![](img/331615367782.jpg)

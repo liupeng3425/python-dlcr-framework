@@ -13,7 +13,7 @@ sendkey = 'replace with your token'
 
 @click.command()
 @click.option('--script', default='')
-@click.option('--config', default='exp_unet_casia2/configs/unet2d_casia2_stage2_448_resize_224_relation_evaluate.py')
+@click.option('--config', default='')
 @click.option('--gpu', default='0')
 @click.option('--push_message', default=False)
 def boot(script: str, config: str, gpu: str, push_message: bool):
@@ -49,8 +49,8 @@ def boot(script: str, config: str, gpu: str, push_message: bool):
     except Exception as e:
         if push_message:
             framework.notification.crash_push_service.push(
-                title=f'Crash on running task {script}',
-                message=e,
+                title=f'Crash on task',
+                message=f'Crash on task {script}\n\n{e}',
                 push_service_token=sendkey,
             )
 
