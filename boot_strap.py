@@ -15,7 +15,7 @@ sendkey = 'replace with your token'
 @click.option('--script', default='')
 @click.option('--config', default='')
 @click.option('--gpu', default='0')
-@click.option('--push_message', default=False)
+@click.option('--push_message', default=False, type=bool)
 def boot(script: str, config: str, gpu: str, push_message: bool):
     """
     启动入口，运行script，把config传给它。
