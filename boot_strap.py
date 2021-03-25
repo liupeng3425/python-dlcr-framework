@@ -49,10 +49,12 @@ def boot(script: str, config: str, gpu: str, push_message: bool):
     except Exception as e:
         if push_message:
             framework.notification.crash_push_service.push(
-                title=f'Crash on task',
-                message=f'Crash on task {script}\n\n{e}',
+                title=f'Crash on running task {script}',
+                message=e,
                 push_service_token=sendkey,
             )
+        else:
+            raise e
 
 
 if __name__ == '__main__':
