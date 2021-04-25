@@ -22,6 +22,8 @@ python boot_strap.py --config exp_test/configs/example_test.py --gpu 6,7
 
 1. Visdom tool
 
+Thanks [@ClancyZhou](https://github.com/ClancyZhou) 
+
 ```python
 from framework.vis.visualizer import Visualizer
 

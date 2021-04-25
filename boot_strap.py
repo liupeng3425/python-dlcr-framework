@@ -15,7 +15,7 @@ sendkey = 'replace with your token'
 @click.option('--script', default='')
 @click.option('--config', default='')
 @click.option('--gpu', default='0')
-@click.option('--push_message', default=False)
+@click.option('--push_message', default=False, type=bool)
 def boot(script: str, config: str, gpu: str, push_message: bool):
     """
     启动入口，运行script，把config传给它。
@@ -49,10 +49,12 @@ def boot(script: str, config: str, gpu: str, push_message: bool):
     except Exception as e:
         if push_message:
             framework.notification.crash_push_service.push(
-                title=f'Crash on task',
-                message=f'Crash on task {script}\n\n{e}',
+                title=f'Crash on running task {script}',
+                message=e,
                 push_service_token=sendkey,
             )
+        else:
+            raise e
 
 
 if __name__ == '__main__':
