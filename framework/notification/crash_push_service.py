@@ -19,5 +19,3 @@ def push(title, message, push_service_token):
         log.info("推送成功!")
     else:
         log.info("推送失败!")
-    log.info("标题->", title)
-    log.info("内容->\n", message)
